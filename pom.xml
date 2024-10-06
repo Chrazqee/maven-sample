@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.chrazqee</groupId>
-  <artifactId>maven-sample</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <!-- groupId + artifactId + version 唯一标识一个 jar 包 -->
+  <groupId>com.chrazqee</groupId>  <!-- 组织的唯一标识 -->
+  <artifactId>maven-sample</artifactId>  <!-- 项目的唯一标识 -->
+  <version>1.0-SNAPSHOT</version>  <!-- 项目的版本号; 区分不同版本的 jar 包; 分为 snapshot 快照版 和 release 正式版 -->
 
   <name>maven-sample</name>
   <!-- FIXME change it to the project's website -->
@@ -13,7 +13,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>18</maven.compiler.release>
   </properties>
 
   <dependencyManagement>
@@ -38,7 +38,13 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-params</artifactId>
-      <scope>test</scope>
+      <scope>test</scope>  <!-- 表示仅仅在 test 的阶段才需要使用这个包 -->
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>6.1.12</version>
     </dependency>
   </dependencies>
 
