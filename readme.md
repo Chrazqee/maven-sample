@@ -139,5 +139,14 @@ mvn archetype:generate
     <artifactId>maven-parent</artifactId>
     <packaging>jar</packaging>
     ```
+
+# 依赖继承
+父工程的依赖会被子工程继承
+问题: 如果父工程的依赖的依赖范围为非 compile (只有依赖范围为 compile 的依赖才能够传递) 的依赖还会被继承到子模块中吗?
+答案: 父工程定义的依赖都会被无条件地继承到子模块中; 一般的工程中不会这样做,会导致父子工程之间的依赖耦合度太高;
+解决方法是: 使用 `dependencyManagement` 标签; 子模块就不会自动继承父模块的依赖了,需要手动继承
+
 # rest of content 
 [click here](https://www.bilibili.com/video/BV1uApMeWErY?p=15&spm_id_from=pageDriver&vd_source=7aee4268dd89ef3eadf3db06a3a58c38)
+
+
